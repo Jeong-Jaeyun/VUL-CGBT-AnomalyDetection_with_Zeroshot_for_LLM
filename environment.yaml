@@ -1,0 +1,26 @@
+name: gcn
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy=1.26.4
+  - scipy=1.11.4
+  - scikit-learn=1.5.2
+  - gensim=4.3.3
+  - pandas=2.2.3
+  - tqdm=4.66.6
+  - pytest=8.3.4
+  - pyyaml=6.0.2
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu126
+      - torch==2.10.0+cu126
+      - torch-geometric==2.7.0
+      - accelerate==0.31.0
+      - datasets==2.21.0
+      - sentencepiece==0.2.0
+      - tensorboard==2.18.0
+      - tensorboardX==2.6.2.2
+      - tokenizers==0.13.3
+      - transformers==4.31.0

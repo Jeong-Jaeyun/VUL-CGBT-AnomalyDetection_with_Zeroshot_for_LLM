@@ -1,0 +1,100 @@
+{
+  "sources": {
+    "argv": {
+      "kind": "parameter",
+      "patterns": ["\\bargv\\b"]
+    },
+    "getenv": {
+      "kind": "call_return",
+      "patterns": ["\\bgetenv\\s*\\("]
+    },
+    "fgets": {
+      "kind": "output_argument",
+      "patterns": ["\\bfgets\\s*\\("]
+    },
+    "recv": {
+      "kind": "output_argument",
+      "patterns": ["\\brecv\\s*\\("]
+    },
+    "recvfrom": {
+      "kind": "output_argument",
+      "patterns": ["\\brecvfrom\\s*\\("]
+    },
+    "read": {
+      "kind": "output_argument",
+      "patterns": ["\\bread\\s*\\("]
+    },
+    "fread": {
+      "kind": "output_argument",
+      "patterns": ["\\bfread\\s*\\("]
+    },
+    "scanf": {
+      "kind": "output_argument",
+      "patterns": ["\\bscanf\\s*\\("]
+    },
+    "fscanf": {
+      "kind": "output_argument",
+      "patterns": ["\\bfscanf\\s*\\("]
+    },
+    "sscanf": {
+      "kind": "output_argument",
+      "patterns": ["\\bsscanf\\s*\\("]
+    }
+  },
+  "direct_sinks": {
+    "gets": {
+      "kind": "direct_sink",
+      "patterns": ["\\bgets\\s*\\("]
+    }
+  },
+  "sinks": {
+    "CWE-119": {
+      "strcpy": {
+        "patterns": ["\\bstrcpy\\s*\\("]
+      },
+      "strcat": {
+        "patterns": ["\\bstrcat\\s*\\("]
+      },
+      "sprintf": {
+        "patterns": ["\\bsprintf\\s*\\("]
+      },
+      "vsprintf": {
+        "patterns": ["\\bvsprintf\\s*\\("]
+      },
+      "memcpy": {
+        "patterns": ["\\bmemcpy\\s*\\("]
+      },
+      "memmove": {
+        "patterns": ["\\bmemmove\\s*\\("]
+      },
+      "array_write": {
+        "patterns": ["\\b[A-Za-z_][A-Za-z0-9_]*\\s*\\[[^\\]\\n]+\\]\\s*="],
+        "slice_patterns": [
+          "\\b[A-Za-z_][A-Za-z0-9_]*\\s*\\[[^\\]\\n]+\\]\\s*=",
+          "\\b[A-Za-z_][A-Za-z0-9_]*\\s*\\[[^\\]\\n]+\\]"
+        ]
+      },
+      "pointer_write": {
+        "patterns": ["\\*\\s*[A-Za-z_][A-Za-z0-9_]*\\s*="],
+        "slice_patterns": [
+          "\\*\\s*[A-Za-z_][A-Za-z0-9_]*\\s*=",
+          "\\*\\s*[A-Za-z_][A-Za-z0-9_]*"
+        ]
+      }
+    },
+    "CWE-78": {
+      "system": {
+        "patterns": ["\\bsystem\\s*\\("]
+      },
+      "popen": {
+        "patterns": ["\\bpopen\\s*\\("]
+      },
+      "execve": {
+        "patterns": ["\\bexecve\\s*\\("]
+      },
+      "execvp": {
+        "patterns": ["\\bexecvp\\s*\\("]
+      }
+    }
+  }
+}
