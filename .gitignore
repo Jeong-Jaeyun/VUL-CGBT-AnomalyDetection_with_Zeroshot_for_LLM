@@ -1,0 +1,49 @@
+# Python cache and tooling
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Editors and OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Local model and experiment outputs
+*.pt
+*.pth
+*.ckpt
+wandb/
+runs/
+outputs/
+
+# Local datasets stay outside version control
+dataset/**
+!dataset/README.md
+
+# Generated CodeQL queries can be rebuilt locally
+qlpacks/**/queries/_generated/
+
+# Optional third-party checkout for fp16 training
+apex/

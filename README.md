@@ -8,7 +8,7 @@ This repository is intended to track source code, configs, docs, and handwritten
 
 The following local assets should stay out of version control:
 
-- large datasets and derived JSONL files under `dataset/`
+- all local dataset files under `dataset/`
 - generated CodeQL queries under `qlpacks/vulcgbt-cpp/queries/_generated/`
 - local Python cache directories such as `__pycache__/`
 - the optional `apex/` checkout used only for `--fp16` training
